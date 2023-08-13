@@ -1,35 +1,86 @@
 import "./style.css";
-import http from "axios";
-import { z } from "zod";
 
-const ResponseSchema = z.string();
-type ResponseSchema = z.infer<typeof ResponseSchema>;
+const customNums = document.querySelectorAll(".customNum");
 
-const load = async (a: string, b: string): Promise<ResponseSchema | null> => {
+customNums.forEach((num) => {
+  const numInput = num.querySelector(".numInput") as HTMLInputElement;
+  const arrUp = num.querySelector(".arrUp") as HTMLElement;
+  const arrDown = num.querySelector(".arrDown") as HTMLElement;
 
-  const response = await http.get("http://localhost:3333", { headers: { "v1": a, "v2": b } });
-  const data = response.data
+  const initialValue = parseInt(numInput.value) || 0;
+  numInput.value = initialValue.toString();
 
-  const result = ResponseSchema.safeParse(data);
+  const updateValue = () => {
+    numInput.dispatchEvent(new Event("input"));
+    checkMaxMin();
+  };
 
-  if (!result.success) {
-    console.log(result.error);
-    return null;
-  }
+  arrUp.addEventListener("click", () => {
+    if (numInput.stepUp) {
+      numInput.stepUp();
+      updateValue();
+    }
+  });
 
-  return result.data;
-};
+  arrDown.addEventListener("click", () => {
+    if (numInput.stepDown) {
+      numInput.stepDown();
+      updateValue();
+    }
+  });
 
-const init = async () => {
-  const value1 = (document.getElementById("elso") as HTMLInputElement).value
-  const value2 = (document.getElementById("masodik") as HTMLInputElement).value
-  const str = await load(value1, value2);
-  if (str)
-    document.getElementById("app")!.innerHTML = str
-};
+  const checkMaxMin = () => {
+    const numInputValue = parseInt(numInput.value);
+    const numInputMax = parseInt(numInput.max || "0");
+    const numInputMin = parseInt(numInput.min || "0");
 
-document.getElementById("load-button")!.addEventListener("click", init);
+    if (numInputValue === numInputMax) {
+      (num as HTMLElement).style.paddingTop = "0.8em";
+      (num as HTMLElement).style.height = "5em";
+      arrUp.style.display = "none";
 
-document
-  .getElementById("app")!
-  .insertAdjacentHTML("afterend", "<p class='bg-pink-400'>demo</p>");
+      (num as HTMLElement).style.paddingBottom = "0";
+      arrDown.style.display = "block";
+    } else if (numInputValue === numInputMin) {
+      (num as HTMLElement).style.paddingBottom = "0.8em";
+      (num as HTMLElement).style.height = "5em";
+      arrDown.style.display = "none";
+
+      (num as HTMLElement).style.paddingTop = "0";
+      arrUp.style.display = "block";
+    } else {
+      (num as HTMLElement).style.padding = "0";
+      (num as HTMLElement).style.height = "7em";
+      arrUp.style.display = "block";
+      arrDown.style.display = "block";
+    }
+  };
+
+  numInput.addEventListener("input", checkMaxMin);
+});
+
+const carousel = document.querySelector('.carousel') as HTMLDivElement
+const carouselInner = document.querySelector('.carousel-inner') as HTMLDivElement
+const carouselItems = document.querySelectorAll('.carousel-item')
+const numItems = carouselItems.length;
+let currentIndex = 0;
+
+function updateCarousel() {
+  carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % numItems;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + numItems) % numItems;
+  updateCarousel();
+}
+
+const prevButton = document.querySelector('.prev-button') as HTMLButtonElement
+const nextButton = document.querySelector('.next-button') as HTMLButtonElement
+
+prevButton.addEventListener('click', prevSlide);
+nextButton.addEventListener('click', nextSlide);

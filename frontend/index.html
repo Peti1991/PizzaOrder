@@ -4,72 +4,351 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&family=Space+Grotesk&display=swap"
+      rel="stylesheet"
+    />
     <title>Vite + TS</title>
   </head>
-  <body class="mt-20 flex items-center justify-center">
-    <div>
-      <div>
-        <img src="public/pizza (1).jpg" alt="" class="w-32 h-32">
-        <h2></h2>
-        <div>
-          <input type="number" class="">
+  <body
+    data-theme="coffee"
+    class="m-0 flex min-h-screen items-center justify-center font-['Roboto_Mono']"
+  >
+    <div class="carousel flex flex-row flex-wrap m-20">
+      <div class="carousel-inner flex">
+        <div class="carousel-item flex flex-wrap items-center justify-center">
+          <button class="prev-button absolute top-2/4 translate-y-1/2">Previous</button>
+          <button class="next-button absolute top-2/4 translate-y-1/2">Next</button>
+          <img src="public/pizza1.png" alt="" class="h-96 w-96" />
+          <h2>Pizza</h2>
+          <div
+            class="customNum m-4 flex h-24 w-12 flex-col items-center justify-between rounded-3xl border-2 border-solid border-yellow-600 bg-yellow-600 text-white transition-opacity"
+          >
+            <svg
+              class="arrUp flex h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"
+              />
+            </svg>
+            <input
+              type="number"
+              max="20"
+              min="0"
+              value="0"
+              class="numInput bg-transparent text-center text-2xl [appearance:textfield] focus:border-transparent focus:outline-none focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+            <svg
+              class="arrDown h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"
+              />
+            </svg>
+          </div>
           <button></button>
+          <p></p>
         </div>
-        <p></p>
-      </div>
-      <div>
-        <img src="public/pizza (2).jpg" alt="" class="w-32 h-32">
-        <h2></h2>
-        <div>
-          <input type="number">
+        <div class="carousel-item flex flex-wrap items-center justify-center">
+          <img src="public/pizza2.png" alt="" class="h-96 w-96" />
+          <h2></h2>
+          <div
+            class="customNum m-4 flex h-24 w-12 flex-col items-center justify-between rounded-3xl border-2 border-solid border-yellow-600 bg-yellow-600 text-white transition-opacity"
+          >
+            <svg
+              class="arrUp flex h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"
+              />
+            </svg>
+            <input
+              type="number"
+              max="20"
+              min="0"
+              value="0"
+              class="numInput bg-transparent text-center text-2xl [appearance:textfield] focus:border-transparent focus:outline-none focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+            <svg
+              class="arrDown h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"
+              />
+            </svg>
+          </div>
           <button></button>
+          <p></p>
         </div>
-        <p></p>
-      </div>
-      <div>
-        <img src="public/pizza (3).jpg" alt="" class="w-32 h-32">
-        <h2></h2>
-        <div>
-          <input type="number">
+        <div class="carousel-item flex flex-wrap items-center justify-center">
+          <img src="public/pizza3.png" alt="" class="h-96 w-96" />
+          <h2></h2>
+          <div
+            class="customNum m-4 flex h-24 w-12 flex-col items-center justify-between rounded-3xl border-2 border-solid border-yellow-600 bg-yellow-600 text-white transition-opacity"
+          >
+            <svg
+              class="arrUp flex h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"
+              />
+            </svg>
+            <input
+              type="number"
+              max="20"
+              min="0"
+              value="0"
+              class="numInput bg-transparent text-center text-2xl [appearance:textfield] focus:border-transparent focus:outline-none focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+            <svg
+              class="arrDown h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"
+              />
+            </svg>
+          </div>
           <button></button>
+          <p></p>
         </div>
-        <p></p>
-      </div>
-      <div>
-        <img src="public/pizza (4).jpg" alt="" class="w-32 h-32">
-        <h2></h2>
-        <div>
-          <input type="number">
+        <div class="carousel-item flex flex-wrap items-center justify-center">
+          <img src="public/pizza4.png" alt="" class="h-96 w-96" />
+          <h2></h2>
+          <div
+            class="customNum m-4 flex h-24 w-12 flex-col items-center justify-between rounded-3xl border-2 border-solid border-yellow-600 bg-yellow-600 text-white transition-opacity"
+          >
+            <svg
+              class="arrUp flex h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"
+              />
+            </svg>
+            <input
+              type="number"
+              max="20"
+              min="0"
+              value="0"
+              class="numInput bg-transparent text-center text-2xl [appearance:textfield] focus:border-transparent focus:outline-none focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+            <svg
+              class="arrDown h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"
+              />
+            </svg>
+          </div>
           <button></button>
+          <p></p>
         </div>
-        <p></p>
-      </div>
-      <div>
-        <img src="public/pizza (5).jpg" alt="" class="w-32 h-32">
-        <h2></h2>
-        <div>
-          <input type="number">
+        <div class="carousel-item flex flex-wrap items-center justify-center">
+          <img src="public/pizza5.png" alt="" class="h-96 w-96" />
+          <h2></h2>
+          <div
+            class="customNum m-4 flex h-24 w-12 flex-col items-center justify-between rounded-3xl border-2 border-solid border-yellow-600 bg-yellow-600 text-white transition-opacity"
+          >
+            <svg
+              class="arrUp flex h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"
+              />
+            </svg>
+            <input
+              type="number"
+              max="20"
+              min="0"
+              value="0"
+              class="numInput bg-transparent text-center text-2xl [appearance:textfield] focus:border-transparent focus:outline-none focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+            <svg
+              class="arrDown h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"
+              />
+            </svg>
+          </div>
           <button></button>
+          <p></p>
         </div>
-        <p></p>
-      </div>
-      <div>
-        <img src="public/pizza (6).jpg" alt="" class="w-32 h-32">
-        <h2></h2>
-        <div>
-          <input type="number">
+        <div class="carousel-item flex flex-wrap items-center justify-center">
+          <img src="public/pizza6.png" alt="" class="h-96 w-96" />
+          <h2></h2>
+          <div
+            class="customNum m-4 flex h-24 w-12 flex-col items-center justify-between rounded-3xl border-2 border-solid border-yellow-600 bg-yellow-600 text-white transition-opacity"
+          >
+            <svg
+              class="arrUp flex h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"
+              />
+            </svg>
+            <input
+              type="number"
+              max="20"
+              min="0"
+              value="0"
+              class="numInput bg-transparent text-center text-2xl [appearance:textfield] focus:border-transparent focus:outline-none focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+            <svg
+              class="arrDown h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"
+              />
+            </svg>
+          </div>
           <button></button>
+          <p></p>
         </div>
-        <p></p>
-      </div>
-      <div>
-        <img src="public/pizza (7).jpg" alt="" class="w-32 h-32">
-        <h2></h2>
-        <div>
-          <input type="number">
+        <div class="carousel-item flex flex-wrap items-center justify-center">
+          <img src="public/pizza7.png" alt="" class="h-96 w-96" />
+          <h2></h2>
+          <div
+            class="customNum m-4 flex h-24 w-12 flex-col items-center justify-between rounded-3xl border-2 border-solid border-yellow-600 bg-yellow-600 text-white transition-opacity"
+          >
+            <svg
+              class="arrUp flex h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"
+              />
+            </svg>
+            <input
+              type="number"
+              max="20"
+              min="0"
+              value="0"
+              class="numInput bg-transparent text-center text-2xl [appearance:textfield] focus:border-transparent focus:outline-none focus:ring-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            />
+            <svg
+              class="arrDown h-3 w-3 cursor-pointer text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 8"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"
+              />
+            </svg>
+          </div>
           <button></button>
+          <p></p>
         </div>
-        <p></p>
       </div>
     </div>
     <script type="module" src="/src/main.ts"></script>
