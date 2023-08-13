@@ -71,9 +71,9 @@ customNums.forEach((num) => {
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 */
 
-const carousel = document.querySelector('.carousel') as HTMLDivElement
-const carouselInner = document.querySelector('.carousel-inner') as HTMLDivElement
-const carouselItems = document.querySelectorAll('.carousel-item')
+const carousel = document.querySelector('.carousel') as HTMLDivElement;
+const carouselInner = document.querySelector('.carousel-inner') as HTMLDivElement;
+const carouselItems = document.querySelectorAll('.carousel-item');
 const numItems = carouselItems.length;
 let currentIndex = 0;
 
@@ -91,8 +91,10 @@ function prevSlide() {
   updateCarousel();
 }
 
-const prevButton = document.querySelector('.prev-button') as HTMLButtonElement
-const nextButton = document.querySelector('.next-button') as HTMLButtonElement
+const prevButton = document.querySelector('.prev-button') as HTMLButtonElement;
+const nextButton = document.querySelector('.next-button') as HTMLButtonElement;
 
 prevButton.addEventListener('click', prevSlide);
 nextButton.addEventListener('click', nextSlide);
+
+updateCarousel()
