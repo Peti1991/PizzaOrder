@@ -1,5 +1,11 @@
 import "./style.css";
 
+/*
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    Counter for Input Pizza amount 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*/
+
 const customNums = document.querySelectorAll(".customNum");
 
 customNums.forEach((num) => {
@@ -58,6 +64,12 @@ customNums.forEach((num) => {
 
   numInput.addEventListener("input", checkMaxMin);
 });
+
+/*
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    Previous Next button and Carousel 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*/
 
 const carousel = document.querySelector('.carousel') as HTMLDivElement
 const carouselInner = document.querySelector('.carousel-inner') as HTMLDivElement
