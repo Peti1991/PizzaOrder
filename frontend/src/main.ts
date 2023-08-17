@@ -328,3 +328,49 @@ const yourOrder = document.getElementById('your-order') as HTMLDivElement;
   renderFunction(orderDetails);
 });
  */
+
+
+//Sok kosárhor button redukálása egyre
+/* const yourOrder = document.getElementById('your-order') as HTMLDivElement;
+
+    const pizzaAmountInputs = [
+      document.getElementById('pizza1') as HTMLInputElement,
+      document.getElementById('pizza2') as HTMLInputElement,
+      document.getElementById('pizza3') as HTMLInputElement,
+      document.getElementById('pizza4') as HTMLInputElement,
+      document.getElementById('pizza5') as HTMLInputElement,
+      document.getElementById('pizza6') as HTMLInputElement,
+      document.getElementById('pizza7') as HTMLInputElement,
+    ];
+
+    // Define a function to calculate and display the order summary
+    function displayOrderSummary() {
+      yourOrder.innerHTML = '';
+
+      for (const pizzaId in orderDetails) {
+        if (pizzaId.startsWith('pizza') && orderDetails[pizzaId] > 0) {
+          yourOrder.innerHTML += <p>${pizzaId}: ${orderDetails[pizzaId]}</p>;
+        }
+      }
+    }
+
+    // Add a click event listener to the "Kosárhoz" button
+    const toYourOrderButton = document.getElementById('to-your-order') as HTMLButtonElement;
+    toYourOrderButton.addEventListener('click', displayOrderSummary);
+
+    // Update order details when pizza inputs change
+    pizzaAmountInputs.forEach((input, index) => {
+      input.addEventListener('input', () => {
+        orderDetails[pizza${index + 1}] = parseInt(input.value);
+      });
+    });
+
+    // Update other order details when they change
+    // For example:
+    // const nameInput = document.getElementById('name') as HTMLInputElement;
+    // nameInput.addEventListener('input', () => {
+    //   orderDetails.name = nameInput.value;
+    // });
+
+    // Similar event listeners for other order details like name, email, phoneNumber, etc.
+  }); */
