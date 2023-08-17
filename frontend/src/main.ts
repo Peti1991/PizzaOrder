@@ -1,7 +1,7 @@
 /* import { json } from "stream/consumers"; */
 import "./style.css";
-import fs from 'fs';
-
+/* import fs from 'fs/promises'; */
+import http from 'axios';
 /*
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     Counter for Input Pizza amount 
@@ -72,8 +72,8 @@ customNums.forEach((num) => {
     Previous Next button and Carousel 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 */
-
-const carousel = document.querySelector('.carousel') as HTMLDivElement;
+/* 
+const carousel = document.querySelector('.carousel') as HTMLDivElement; */
 const carouselInner = document.querySelector('.carousel-inner') as HTMLDivElement;
 const carouselItems = document.querySelectorAll('.carousel-item');
 const numItems = carouselItems.length;
@@ -117,8 +117,8 @@ type orderType = {
   "pizza7": number,
   "name" : string,
   "email" : string,
-  "phoneNumber" : string,
-  "houseNumber" : string,
+  "phoneNumber" : number,
+  "houseNumber" : number,
   "city": string,
   "zipCode": string,
   "street": string
@@ -134,8 +134,8 @@ const orderDetails: orderType = {
   "pizza7": 0,
   "name" : "",
   "email" : "",
-  "phoneNumber" : "",
-  "houseNumber" : "",
+  "phoneNumber" : 0,
+  "houseNumber" : 0,
   "city": "",
   "zipCode": "",
   "street": ""
@@ -157,11 +157,21 @@ const pizza5amount = document.getElementById('pizza5')  as HTMLInputElement
 const pizza6amount = document.getElementById('pizza6')  as HTMLInputElement
 const pizza7amount = document.getElementById('pizza7')  as HTMLInputElement
 
+/* const renderData=()=> {yourOrder.innerHTML=`<div class='hidden'>hali</div>`} */
+
+
+
 pizzaButton1.addEventListener('click', async () => {
-  const amount = await +pizza1amount.value
+  const amount =await +pizza1amount.value
   if (!amount)
     return null
   orderDetails.pizza1 += amount
+ /*  const response=await http.post("http://localhost:3333/api/order",JSON.stringify(orderDetails),{
+    headers:{
+      "Content-Type":"application/json"
+    }
+  } ) */
+/*   renderData() */
   console.log(orderDetails)
 })
 
@@ -212,3 +222,109 @@ pizzaButton7.addEventListener('click', async () => {
   orderDetails.pizza7 += amount
   console.log(orderDetails)
 })
+
+// Ákos kódjai:
+/* document.addEventListener('DOMContentLoaded', () => {
+  type orderType = {
+    "pizza1": number,
+    "pizza2": number,
+    "pizza3": number,
+    "pizza4": number,
+    "pizza5": number,
+    "pizza6": number,
+    "pizza7": number,
+    "name": string,
+    "email": string,
+    "phoneNumber": string,
+    "houseNumber": string,
+    "city": string,
+    "zipCode": string,
+    "street": string
+    [key: string]: any
+  }
+
+  const orderDetails: orderType = {
+    "pizza1": 0,
+    "pizza2": 0,
+    "pizza3": 0,
+    "pizza4": 0,
+    "pizza5": 0,
+    "pizza6": 0,
+    "pizza7": 0,
+    "name": "",
+    "email": "",
+    "phoneNumber": "",
+    "houseNumber": "",
+    "city": "",
+    "zipCode": "",
+    "street": ""
+  }
+
+const yourOrder = document.getElementById('your-order') as HTMLDivElement;
+  const pizzaButtons = [
+    document.getElementById('pizza1-button') as HTMLButtonElement,
+    document.getElementById('pizza2-button') as HTMLButtonElement,
+    document.getElementById('pizza3-button') as HTMLButtonElement,
+    document.getElementById('pizza4-button') as HTMLButtonElement,
+    document.getElementById('pizza5-button') as HTMLButtonElement,
+    document.getElementById('pizza6-button') as HTMLButtonElement,
+    document.getElementById('pizza7-button') as HTMLButtonElement,
+  ];
+  const pizzaAmountInputs = [
+    document.getElementById('pizza1') as HTMLInputElement,
+    document.getElementById('pizza2') as HTMLInputElement,
+    document.getElementById('pizza3') as HTMLInputElement,
+    document.getElementById('pizza4') as HTMLInputElement,
+    document.getElementById('pizza5') as HTMLInputElement,
+    document.getElementById('pizza6') as HTMLInputElement,
+    document.getElementById('pizza7') as HTMLInputElement,
+  ];
+
+  const renderFunction = (orderDetails: orderType) => {
+    yourOrder.innerHTML = '';
+    console.log(orderDetails)
+
+    for (let i = 1; i <= 7; i++) {
+      const pizzaAmountInput = pizzaAmountInputs[i - 1];
+      const amount = +pizzaAmountInput.value;
+
+      if (amount > 0) {
+        yourOrder.innerHTML += <li>Pizza ${i}: ${amount} db</li>;
+      }
+    }
+  }; */
+
+/*   const addPizza = (pizzaId: number, amount: number, orderDetails: orderType) => {
+    if (!amount) return;
+
+    const pizzaKey = pizza${pizzaId};
+    orderDetails[pizzaKey] += amount;
+    console.log(orderDetails);
+    renderFunction(orderDetails);
+  };
+
+  const setupPizzaButton = (
+    pizzaButton: HTMLButtonElement,
+    pizzaAmountInput: HTMLInputElement,
+    pizzaId: number,
+    orderDetails: orderType
+  ) => {
+    pizzaButton.addEventListener('click', async () => {
+      const amountString = await pizzaAmountInput.value;
+      const amount = parseInt(amountString);
+      addPizza(pizzaId, amount, orderDetails);
+    });
+  };
+
+  for (let i = 0; i < pizzaButtons.length; i++) {
+    setupPizzaButton(
+      pizzaButtons[i],
+      pizzaAmountInputs[i],
+      i + 1,
+      orderDetails
+    );
+  }
+
+  renderFunction(orderDetails);
+});
+ */

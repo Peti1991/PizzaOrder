@@ -17,14 +17,21 @@ const OrderSchema = z.object({
   houseNumber: z.number(),
   phoneNumber: z.number(),
   email: z.string(),
-  margherita: z.number(),
-  formaggi: z.number(),
+  pizza1: z.number(),
+  pizza2: z.number(),
+  pizza3: z.number(),
+  pizza4: z.number(),
+  pizza5: z.number(),
+  pizza6: z.number(),
+  pizza7: z.number(),
+  /* formaggi: z.number(),
   salami: z.number(),
   tuna: z.number(),
   hawaii: z.number(),
   ham: z.number(),
-  chef: z.number(),
-  date: z.string()
+  chef: z.number(), */
+  /* date: z.string() */
+  zipCode: z.string(),
 })
 
 server.post("/api/order", async (req: Request, res: Response) => {
